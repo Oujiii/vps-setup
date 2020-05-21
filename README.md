@@ -50,8 +50,4 @@ cat ~/.ssh/id_rsa.pub
 Finally, you will be prompted to specify a [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the server. It will be set to 'America/Sao_Paulo' if you do not specify a value.
 
 # Supported versions
-This setup script has been tested against Ubuntu 14.04, Ubuntu 16.04 and Ubuntu 18.04.
-
-# Running tests
-Tests are run against a set of Vagrant VMs. To run the tests, run the following in the project's directory:  
-`./tests/tests.sh`
+This setup script has been tested against Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04 and Debian 9
