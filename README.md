@@ -6,7 +6,9 @@ This is a setup script to automate the setup and provisioning of Linux (Debian-b
 * Adds a public ssh key for the new user account
 * Disables password authentication to the server
 * Deny root login to the server
-* Setup Uncomplicated Firewall
+* Install ZeroTier and Tailscale
+* Setup ZeroTier and Tailscale networks
+* Setup Uncomplicated Firewall with rules to allow SSH only from ZeroTier and Tailscale interfaces
 * Create Swap file based on machine's installed memory
 * Setup the timezone for the server (Default to "America/Sao_Paulo")
 * Install Network Time Protocol
@@ -46,6 +48,8 @@ Following that, you will then be prompted to add a public ssh key (which should 
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub
 ```
+
+After that, you will be prompted for your [ZeroTier network ID](https://www.zerotier.com/) and your [Tailscale Pre-authentication key](https://tailscale.com/kb/1085/auth-keys)
 
 Finally, you will be prompted to specify a [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the server. It will be set to 'America/Sao_Paulo' if you do not specify a value.
 
