@@ -55,6 +55,8 @@ function changeSSHConfig() {
 
 # Install Tailscale and Zerotier
 function installZT-TS() {
+    sudo apt update
+    sudo apt install gnupg2 -y #some systems don't have the package and so this fails and breaks the whole script
     curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add -
     curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tailscale.list
     sudo apt update
