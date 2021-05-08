@@ -144,7 +144,7 @@ function setTimezone() {
 
 # Configure Network Time Protocol
 function configureNTP() {
-    s    ubuntu_version="$(lsb_release -sr)"
+    ubuntu_version="$(lsb_release -sr)"
 
     if [[ $ubuntu_version == '20.04' ]]; then
         sudo systemctl restart systemd-timesyncd
