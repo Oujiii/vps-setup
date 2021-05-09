@@ -79,11 +79,11 @@ function hasSwap() {
     [[ "$(sudo swapon -s)" == *"/swapfile"* ]]
 }
 
-#function cleanup() {
-#    if [[ -f "/etc/sudoers.bak" ]]; then
-#        revertSudoers
-#    fi
-#}
+function cleanup() {
+    if [[ -f "/etc/sudoers.bak" ]]; then
+        revertSudoers
+    fi
+}
 
 function logTimestamp() {
     local filename=${1}
