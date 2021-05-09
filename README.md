@@ -14,7 +14,10 @@ This is a setup script to automate the setup and provisioning of Linux (Debian-b
 * Install Network Time Protocol
 
 `first.sh`
-* Installs curl htop screen git sudo ufw in case the server does not have those yet.
+* Installs curl htop screen sudo ufw in case the server does not have those yet.
+
+`ufw-fix.sh`
+* Only required on Debian 10 (Buster). Changes `iptables-nft` to `iptables-legacy`. `iptables-nft` breaks `ufw` on the Debian Buster installs I tried it on.
 
 `docker.sh`
 * Installs docker, docker-compose and ufw-docker (a tool to fix ufw/docker integration)
@@ -54,4 +57,4 @@ After that, you will be prompted for your [ZeroTier network ID](https://www.zero
 Finally, you will be prompted to specify a [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the server. It will be set to 'America/Sao_Paulo' if you do not specify a value.
 
 # Supported versions
-This setup script has been tested against Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04 and Debian 9
+This setup script has been tested against Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Debian 9 (Stretch) and Debian 10 (Buster).
