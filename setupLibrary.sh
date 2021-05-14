@@ -172,7 +172,6 @@ function getPhysicalMemory() {
 function disableSudoPassword() {
     local username="${1}"
 
-    sudo cp /etc/sudoers /etc/sudoers.bak
     sudo bash -c "echo '${1} ALL=(ALL) NOPASSWD: ALL' | (EDITOR='tee -a' visudo)"
 }
 
