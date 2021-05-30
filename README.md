@@ -1,6 +1,6 @@
 # Bash setup script for Linux (Debian-based) servers
 
-Zerotier support can be found on the Zerotier branch.
+Want to run without Tailscale? Clone the `open` branch instead. Zerotier support can be found on the `zerotier` branch.
 
 This is a setup script to automate the setup and provisioning of Linux (Debian-based) servers. It does the following:
 * Adds a new user account with sudo access
