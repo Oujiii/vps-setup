@@ -1,5 +1,6 @@
 # Bash setup script for Linux (Debian-based) servers
 
+Tailscale support can be found on the `master` branch. Zerotier and Tailscale support can be found on the `Zerotier` branch.
 
 This is a setup script to automate the setup and provisioning of Linux (Debian-based) servers. It does the following:
 * Adds a new user account with sudo access
@@ -13,6 +14,9 @@ This is a setup script to automate the setup and provisioning of Linux (Debian-b
 
 `first.sh`
 * Installs curl htop screen git sudo ufw in case the server does not have those yet.
+
+`ufw-fix.sh`
+* Only required on Debian 10 (Buster). Changes `iptables-nft` to `iptables-legacy`. `iptables-nft` breaks `ufw` on the Debian Buster installs I tried it on.
 
 `docker.sh`
 * Installs docker, docker-compose and ufw-docker (a tool to fix ufw/docker integration)
@@ -34,6 +38,7 @@ Run the setup script
 ```bash
 cd vps-setup
 bash first.sh (if on Debian or Ubuntu minimal)
+bash ufw-fix.sh (if on Debian 10)
 bash setup.sh
 bash docker.sh (if a docker install is wanted)
 ```
