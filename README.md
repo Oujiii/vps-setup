@@ -1,14 +1,15 @@
 # Bash setup script for Linux (Debian-based) servers
 
+Zerotier support can be found on the Zerotier branch.
 
 This is a setup script to automate the setup and provisioning of Linux (Debian-based) servers. It does the following:
 * Adds a new user account with sudo access
 * Adds a public ssh key for the new user account
 * Disables password authentication to the server
 * Deny root login to the server
-* Install ZeroTier and Tailscale
-* Setup ZeroTier and Tailscale networks
-* Setup Uncomplicated Firewall with rules to allow SSH only from ZeroTier and Tailscale interfaces
+* Install Tailscale
+* Setup Tailscale network
+* Setup Uncomplicated Firewall with rules to allow SSH only from the Tailscale interface
 * Create Swap file based on machine's installed memory
 * Setup the timezone for the server (Default to "America/Sao_Paulo")
 * Install Network Time Protocol
