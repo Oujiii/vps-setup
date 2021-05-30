@@ -54,7 +54,7 @@ ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub
 ```
 
-After that, you will be prompted for your [ZeroTier network ID](https://www.zerotier.com/) and your [Tailscale Pre-authentication key](https://tailscale.com/kb/1085/auth-keys)
+After that, you will be prompted for your [Tailscale Pre-authentication key](https://tailscale.com/kb/1085/auth-keys)
 
 Finally, you will be prompted to specify a [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the server. It will be set to 'America/Sao_Paulo' if you do not specify a value.
 
