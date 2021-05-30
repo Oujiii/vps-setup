@@ -53,24 +53,20 @@ function changeSSHConfig() {
     sudo sed -re 's/^(\#?)(UsePAM)([[:space:]]+)yes/\2\3no/' -i."$(echo 'old')" /etc/ssh/sshd_config
 }
 
-# Install Tailscale and Zerotier
-function installZT-TS() {
+# Install Tailscale
+function installTailscale() {
     sudo apt update
     sudo apt install gnupg2 -y #some systems don't have the package and so this fails and breaks the whole script
+    sudo apt install gpg -y
     curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add -
     curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tailscale.list
     sudo apt update
     sudo apt install tailscale -y
-    sudo apt install gpg -y
-    curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg' | gpg --import && \
-    if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
 }
 
-# Setup ZeroTier and Tailscale
-function setupZT-TS() {
-    local ztid=${1}
-    local tskey=${2}
-    sudo zerotier-cli join "${ztid}"
+# Setup Tailscale
+function setupTailscale() {
+    local tskey=${1}
     sudo tailscale up --authkey "${tskey}"
 }
 
@@ -79,7 +75,6 @@ function setupZT-TS() {
 function setupUfw() {
     sudo ufw default deny incoming
     sudo ufw default allow outgoing
-    sudo ufw allow in on ztwfujpzie to any port 22
     sudo ufw allow in on tailscale0 to any port 22
     sudo ufw allow 41641/udp #TS UDP port
     yes y | sudo ufw enable
