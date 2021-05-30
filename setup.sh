@@ -47,8 +47,8 @@ function main() {
     disableSudoPassword "${username}"
     addSSHKey "${username}" "${sshKey}"
     changeSSHConfig
-    installZT-TS
-    setupZT-TS "${ztid}" "${tskey}"
+    installTailscale
+    setupTailscale "${tskey}"
     echo 'Running setup script...'
     setupUfw
 
@@ -79,11 +79,11 @@ function hasSwap() {
     [[ "$(sudo swapon -s)" == *"/swapfile"* ]]
 }
 
-function cleanup() {
-    if [[ -f "/etc/sudoers.bak" ]]; then
-        revertSudoers
-    fi
-}
+#function cleanup() {
+#    if [[ -f "/etc/sudoers.bak" ]]; then
+#        revertSudoers
+#    fi
+#}
 
 function logTimestamp() {
     local filename=${1}
