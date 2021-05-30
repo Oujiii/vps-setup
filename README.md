@@ -40,6 +40,7 @@ Run the setup script
 ```bash
 cd vps-setup
 bash first.sh (if on Debian or Ubuntu minimal)
+bash ufw-fix.sh (if on Debian 10)
 bash setup.sh
 bash docker.sh (if a docker install is wanted)
 ```
