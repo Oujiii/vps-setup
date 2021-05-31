@@ -40,7 +40,6 @@ function main() {
     read -rp $'Paste in the public SSH key for the new user:\n' sshKey
     logTimestamp "${output_file}"
 
-    read -rp "Paste your ZT network ID:" ztid
     read -rp "Paste your TS pre-auth key:" tskey
     
     exec 3>&1 >>"${output_file}" 2>&1
