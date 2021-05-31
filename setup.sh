@@ -63,7 +63,7 @@ function main() {
 
     sudo service ssh restart
 
-    cleanup
+#    cleanup
 
     echo "Setup Done! Log file is located at ${output_file}" >&3
 }
