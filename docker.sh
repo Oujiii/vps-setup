@@ -8,8 +8,8 @@ sh get-docker.sh
 
 echo "Docker was installed"
 
-#Get the script install from Docker website and execute it (version 1.24.1 hangs randomly)
-curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+#Get the script install from Docker website and execute it 
+curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
